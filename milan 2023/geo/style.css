@@ -1,0 +1,262 @@
+/* @keyframes correct {
+    from {background-color: white;}
+    to {background-color: lime;}
+}
+
+@keyframes reset {
+    to {background-color: white;}
+} */
+
+
+
+html {
+    --w: 1990;  /* native map width */
+    --h: 1041;  /* native map height */
+    --wh: (calc(var(--w) / var(--h)));  /* aspect ratios */
+    --hw: (calc(var(--h) / var(--w)));
+}
+
+body {
+    background-color: beige;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 40px;
+    color: red;
+    text-align: center;
+}
+
+/* img {
+    width: 800px;
+    height: auto;
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto; 
+} */
+
+#map {
+    --mw: 1200;  /* map width */
+    --mh: calc(var(--mw) * var(--hw));  /* map height */
+    --sw: calc(var(--mw) / var(--w));  /* scale factor, width */
+    --sh: calc(var(--mh) / var(--h));  /* scale factor, height */
+
+    position: relative;
+    background-image: url("map.png");
+    background-repeat: no-repeat;
+    background-size: 1200px auto;
+    width: 1200px;
+    height: calc(1200px * var(--hw));
+    margin: auto;
+}
+
+button {
+    position: absolute;
+    background-color: white;
+    outline-color: black;
+    outline-width: 1px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 2s;
+}
+
+.animateIncorrect{
+    animation: correct 0.5s;
+  }
+
+.animateCorrect{
+    animation: incorrect 0.5s;
+  }
+
+.animateReset{
+    animation: reset 0.5s;
+  }
+
+button:hover {
+    background-color: silver;
+}
+
+#allegany { left: calc(420px * var(--sw));  top: calc(70px * var(--sh)); }
+
+#carroll { left: calc(1080px * var(--sw));  top: calc(115px * var(--sh)); }
+
+#harford { left: calc(1375px * var(--sw));  top: calc(115px * var(--sh)); }
+
+#stmarys { left: calc(1255px * var(--sw));  top: calc(773px * var(--sh)); }
+
+#annearundel { left: calc(1255px * var(--sw));  top: calc(390px * var(--sh)); }
+
+#cecil { left: calc(1535px * var(--sw));  top: calc(85px * var(--sh)); }
+
+#howard { left: calc(1116px * var(--sw));  top: calc(273px * var(--sh)); }
+
+#somerset { left: calc(1625px * var(--sw));  top: calc(875px * var(--sh)); }
+
+#baltimorecity { left: calc(1242px * var(--sw));  top: calc(240px * var(--sh)); }
+
+#charles { left: calc(1090px * var(--sw));  top: calc(670px * var(--sh)); }
+
+#kent { left: calc(1495px * var(--sw));  top: calc(242px * var(--sh)); }
+
+#talbot { left: calc(1435px * var(--sw));  top: calc(540px * var(--sh)); }
+
+#baltimore { left: calc(1225px * var(--sw));  top: calc(155px * var(--sh)); }
+
+#dorchester { left: calc(1500px * var(--sw));  top: calc(710px * var(--sh)); }
+
+#montgomery {left: calc(1000px * var(--sw));  top: calc(335px * var(--sh)); }
+
+#washington { left: calc(787px * var(--sw));  top: calc(75px * var(--sh)); }
+
+#calvert { left: calc(1253px * var(--sw));  top: calc(650px * var(--sh)); }
+
+#frederick { left: calc(920px * var(--sw));  top: calc(153px * var(--sh)); }
+
+#princegeorges { left: calc(1150px * var(--sw));  top: calc(500px * var(--sh)); }
+
+#wicomico { left: calc(1667px * var(--sw));  top: calc(740px * var(--sh)); }
+
+#caroline { left: calc(1572px * var(--sw));  top: calc(480px * var(--sh)); }
+
+#garrett { left: calc(140px * var(--sw));  top: calc(120px * var(--sh)); }
+
+#queenannes { left: calc(1475px * var(--sw));  top: calc(387px * var(--sh)); }
+
+#worcester { left: calc(1740px * var(--sw));  top: calc(840px * var(--sh)); }
+
+
+
+
+/* #allegany.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#carroll.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#harford.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#stmarys.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#annearundel.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#cecil.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#howard.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#somerset.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#baltimorecity.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#charles.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#kent.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#talbot.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#baltimore.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#dorchester.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#montgomery.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#washington.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#calvertv.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#frederick.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#princegeorges.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#wicomico.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#caroline.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#garrett.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#queenannes.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+#worcester.colorTrans {
+    animation: colorChange 2s linear 0s initial;
+}
+
+
+
+
+/* button.colorTrans{
+    animation: colorChange 2s linear 0s initial;
+} */
+
+/* @keyframes colorChange {
+    from {background-color: white;}
+    to {background-color: red;}
+} */
+
+/* <button type="button" onClick="buttonClick(this.id) id="Allegany County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Carroll County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Harford County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="St Mary's County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Anne Arundel County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Cecil County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Howard County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Somerset County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Baltimore City">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Charles County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Kent County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Talbot County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Baltimore County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Dorchester County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Montgomery County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Washington County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Calvert County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Frederick County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Prince George's County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Wicomico County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Caroline County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Garrett County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Queen Anne's County">?</button>
+<button type="button" onClick="buttonClick(this.id) id="Worcester County">?</button> */
